@@ -1,0 +1,33 @@
+<h1>CRUD OPERATION</h1>
+<br>
+<br>
+
+
+<a class="btn btn-primary mb-1" href="/create">Add User</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">Email</th>
+      <th scope="col">Expertise</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.expertise}}</td>
+      <td>
+        <a class="btn btn-primary" href="/user/{{this.id}}">VIEW</a>
+        <a class="btn btn-success" href="/edit/{{this.id}}">Edit</a>
+        <a class="btn btn-danger" href="/delete/{{this.id}}">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+    
+  </tbody>
+</table>
